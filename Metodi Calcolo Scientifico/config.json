@@ -1,0 +1,29 @@
+{
+    "matrix_name": "spa1.mtx",
+    "tollerance": [10e-4, 10e-6, 10e-8, 10e-10],
+    "max_iter": 20000,
+    "time_unit": ["s", "ms", "µs", "ns"],
+    "omega_v_jacobi": 0.02,
+    "omega_v_gaub": 1.5,
+    "active_methods": {
+        "jacobi": {
+            "attivo": true
+        },
+        "jacobi_relax":{
+            "attivo": false
+        },
+        "guad_siedel":{
+            "attivo": true
+        },
+        "guad_siedel_relax":{
+            "attivo": false
+        },
+        "gradient":{
+            "attivo": true
+        },
+        "gradient_conjugate":{
+            "attivo": true
+        }
+        
+    }
+}

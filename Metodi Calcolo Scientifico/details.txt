@@ -1,0 +1,48 @@
+Work on matrix: spa1.mtx
+
+Tollerance: 1e-07
+
+------------------
+------------------
+Type: Jacobi
+------------------
+Scaled Residual: 9.691759286126303e-08
+N-Iteration: 214
+Time: 34.93 s
+Relative Error: 3.49934270502672e-05
+------------------
+
+
+------------------
+------------------
+Type: Gaub-Seidel
+------------------
+Scaled Residual: 9.673828671015835e-08
+N-Iteration: 23
+Time: 4.11 s
+Relative Error: 8.449126610798885e-05
+------------------
+
+
+------------------
+------------------
+Type: Gradient Descent Method
+------------------
+Scaled Residual: 9.990446666001744e-08
+N-Iteration: 5895
+Time: 1.68 s
+Relative Error: 0.002288129006879913
+------------------
+
+
+------------------
+------------------
+Type: Conjugate Gradient Descent Method
+------------------
+Scaled Residual: 8.98374789672275e-08
+N-Iteration: 147
+Time: 27.75 ms
+Relative Error: 0.0003568568487672952
+------------------
+
+
