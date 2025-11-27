@@ -4,6 +4,10 @@ import os
 import csv
 
 def check_file(file_path:str):
+    """
+        Check if path exists
+    """
+
     return True if os.path.exists(file_path) else False
 
 def open_file(file_path:str):
@@ -26,7 +30,6 @@ def open_file(file_path:str):
 def process_data(start_ts, end_ts, patient_str):
     """
         Process the data and adapt it with the correct format
-    
     """
 
     try:
@@ -43,7 +46,7 @@ def process_data(start_ts, end_ts, patient_str):
         
         first_name, last_name, patient_id = patient_match.groups()
 
-        #IF WEEKDAY
+        """Check if date is WEEKDAY"""
         if start_dt.weekday() >= 5:
             raise Exception
         
@@ -62,7 +65,9 @@ def find_match(lines):
     output_rows = []
     for line in lines[0:]:
 
-        #PHASE 2 - Remove newline and replace it with whitespace
+        """
+            PHASE 2 - Remove newline and replace it with whitespace
+        """
         print(line)
         line = re.sub(r'\s+', ' ', line.strip())
         print(line)
@@ -105,6 +110,11 @@ FILE_OUT = "dataformatted.csv"
 DIR_OUTPUT = "output_file"
 
 if __name__ == '__main__':
+
+    """
+        MAIN FUNCTION
+    """
+
     curr_working_directory = os.path.dirname(os.path.realpath(__file__))
     filepath_in = os.path.join(curr_working_directory, DIR_INPUT)
     filepath_in = os.path.join(filepath_in, FILE_IN)
