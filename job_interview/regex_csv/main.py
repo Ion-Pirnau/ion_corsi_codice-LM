@@ -29,13 +29,13 @@ def process_data(start_ts, end_ts, patient_str):
         patient_match = re.match(r'([^,]+), ([^(]+) \((\d+)\)', patient_str)
 
         if not patient_match:
-            None
+            raise Exception
         
         first_name, last_name, patient_id = patient_match.groups()
 
         #IF WEEKDAY
         if start_dt.weekday() >= 5:
-            None
+            raise Exception
         
         return [start_date, start_time, end_date, end_time,
                 first_name.strip(), last_name.strip(), int(patient_id)]
