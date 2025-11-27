@@ -7,6 +7,11 @@ def check_file(file_path:str):
     return True if os.path.exists(file_path) else False
 
 def open_file(file_path:str):
+    """
+        Open the file with the raw data and read it.
+        Fixed the problem of reading the same instance on multiple lines (see the records variable)
+    """
+
     if check_file(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -19,6 +24,11 @@ def open_file(file_path:str):
 
 
 def process_data(start_ts, end_ts, patient_str):
+    """
+        Process the data and adapt it with the correct format
+    
+    """
+
     try:
         start_dt = datetime.strptime(start_ts, '%Y-%m-%dT%H:%M:%S')
         end_dt = datetime.strptime(end_ts, '%Y-%m-%dT%H:%M:%S')
@@ -44,6 +54,11 @@ def process_data(start_ts, end_ts, patient_str):
         return None
     
 def find_match(lines):
+    """
+        Find the match from the raw-data given the regular expression.
+        Process the data after.
+    """
+
     output_rows = []
     for line in lines[0:]:
 
@@ -68,6 +83,9 @@ def find_match(lines):
     return output_rows
 
 def print_on_file(rows, filepath_out):
+    """
+        Print the data formatted into a csv file
+    """
     if check_file(filepath_out):
         with open(filepath_out, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
