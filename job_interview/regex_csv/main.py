@@ -75,7 +75,9 @@ def find_match(lines):
     
         start_ts, end_ts, patient_str = matches.groups()
 
-        #PHASE 4
+        """
+            PHASE 4
+        """
         row = process_data(start_ts, end_ts, patient_str)
         if row:
             output_rows.append(row)
@@ -109,11 +111,18 @@ if __name__ == '__main__':
     filepath_out = os.path.join(curr_working_directory, DIR_OUTPUT)
     filepath_out = os.path.join(filepath_out, FILE_OUT)
     
-    #PHASE 1
+    
+    """
+        PHASE 1
+    """
     records = open_file(file_path=filepath_in)
 
-    #PHASE 2-3
+    """
+        PHASE 2-3
+    """
     rows = find_match(records)
     
-    #PHASE 5-6
+    """
+        PHASE 5-6
+    """
     print_on_file(rows, filepath_out)
