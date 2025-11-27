@@ -96,6 +96,6 @@ if __name__ == '__main__':
 
     #PHASE 2-3
     rows = find_match(records)
-    #PHAE 5-6
-    #print(filepath_out)
+    
+    #PHASE 5-6
     print_on_file(rows, filepath_out)
