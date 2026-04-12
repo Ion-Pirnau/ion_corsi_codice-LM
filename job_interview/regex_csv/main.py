@@ -5,7 +5,7 @@ import csv
 
 def check_file(file_path:str):
     """
-        Check if path exists
+        Check if path exists 
     """
 
     return True if os.path.exists(file_path) else False
